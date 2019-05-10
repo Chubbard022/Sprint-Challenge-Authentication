@@ -1,9 +1,9 @@
 const axios = require('axios');
 const bcrypt = require("bcryptjs")
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken").jwtKey
 
 const { authenticate } = require('../auth/authenticate');
-const secret = require("../auth/secret")
+const secret = require("../auth/secret").jwtKey
 const Users = require("../auth/authenticate")
 
 module.exports = server => {
@@ -19,7 +19,7 @@ function register(req, res) {
 
   Users.add(user)
     .then(user=>{
-      res.status(201).json({successMessage: "SUCCESS in registering"})
+      res.status(201).json(user)
     })
     .catch(err=>{
       res.status(500).json({errorMessage:"ERROR occurred when registering"})

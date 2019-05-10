@@ -33,9 +33,9 @@ function find(){
 function findBy(filter){
   return debug("users").where(filter)
 }
-async function add (user){
-  const [id] = await debug("users").insert(user)
-  return findById(id)
+async function add(user) {
+  const [id] = await db("users").insert(user);
+  return findById(id);
 }
 function findById(){
   return debug("users")
