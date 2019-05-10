@@ -2,9 +2,9 @@ import React from "react"
 import axios from "axios"
 
 
-class User extends React.Component{
+class Jokes extends React.Component{
     state={
-
+        jokes:[]
     }
 
     render(){
@@ -18,4 +18,4 @@ class User extends React.Component{
 
 
 
-export default User;
+export default Jokes;
